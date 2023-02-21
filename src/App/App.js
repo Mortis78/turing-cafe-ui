@@ -1,27 +1,28 @@
+
 import React, { Component } from 'react';
 import Reservations from './Reservations'
+import getData from './apiCalls';
 import './App.css';
 
 class App extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state = {
-      reservations:[
-        {
-        id: 1,
-        name: "Christie",
-        date: "12/29",
-        time: "7:00",
-        number: 12
-        }
-      ]
+      reservations:[]
     }
   }
 
-  // cancelReservation = (id) => {
-  //   const filteredReservations = this.state.reservations.filter(reservation => reservation.id !== id)
-  //   this.setState({reservation: filteredReservations })
-  // }
+  cancelReservation = (id) => {
+    const filteredReservations = this.state.reservations.filter(reservation => reservation.id !== id)
+    this.setState({reservation: filteredReservations })
+  }
+
+  componentDidMount () {
+    getData('reservations')
+      .then((data) => this.setState({ reservations: data.reservations }))
+      .catch((error) => console.log(error))
+          
+  }
   
 
   render() {

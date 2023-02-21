@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import Card from './Card.js'
+import App from './App'
 import './Reservations.css'
 
 const Reservations = ({reservations, cancelReservation}) => {
@@ -7,6 +8,7 @@ const Reservations = ({reservations, cancelReservation}) => {
         return (
             <Card
                 name={reservation.name}
+                date={reservation.date}
                 time={reservation.time}
                 number={reservation.number}
                 id={reservation.id}
