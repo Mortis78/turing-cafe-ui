@@ -1,5 +1,5 @@
-import React,{ Fragment} from 'react'
-import './card.css'
+import React from 'react'
+import './Card.css'
 
 const Card = ({id, name, date, time, number }) => {
     return(

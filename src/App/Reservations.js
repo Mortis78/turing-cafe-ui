@@ -1,8 +1,8 @@
-import React from 'react'
-import '../Card/Card.js'
-import './Reservations/Reservations.css'
+import React, { Fragment } from 'react'
+import Card from './Card.js'
+import './Reservations.css'
 
-function  Reservations({reservations, cancelReservation}){
+const Reservations = ({reservations, cancelReservation}) => {
     const allReservations = reservations.map(reservation => {
         return (
             <Card
@@ -16,7 +16,9 @@ function  Reservations({reservations, cancelReservation}){
         )
     })
     return(
-        {allReservations}
+        <div className='reservation-container'>
+            {allReservations}
+        </div>
     )
 }
 export default Reservations             
