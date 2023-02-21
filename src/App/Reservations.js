@@ -1,6 +1,6 @@
 import React from 'react'
-import './components/Card/Card.js'
-import './components/Reservations/Reservations.css'
+import '../Card/Card.js'
+import './Reservations/Reservations.css'
 
 function  Reservations({reservations, cancelReservation}){
     const allReservations = reservations.map(reservation => {
@@ -19,3 +19,4 @@ function  Reservations({reservations, cancelReservation}){
         {allReservations}
     )
 }
+export default Reservations             
